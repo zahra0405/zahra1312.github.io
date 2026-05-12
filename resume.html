@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <title>Resume & Academic Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="topic.html">Topic</a>
+    <a href="resume.html" class="active">Resume</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+<body>
+
+<div class="container">
+
+	<div class="header">
+        <h1>RESUME <span>| Academic & Skills</span></h1>
+    	</div>
+    
+    	<div class="content">        
+        	
+        	<h2 class="section-title"> Education</h2><br>
+		<ul class="education-list">
+
+    			<li>
+        			<img src="image/logoUitm.png" class="school-logo" alt="UiTM Logo">
+        			<div class="education-content">
+            				<b>Bachelor of Information Science (Hons.) in Library Management</b>
+					<br>
+            				<i>Universiti Teknologi MARA (UiTM) Merbok</i> | October 2025 - Present
+					<br>
+            				<span style="color:#453827;"><b>Current CGPA: 3.8</b></span>
+        			</div>
+    			</li>
+
+    			<li>
+        			<img src="image/logoUnimap.png" class="school-logo" alt="UniMAP Logo">
+        			<div class="education-content">
+           				<b>Diploma in Computer Engineering</b>
+					<br>
+            				<i>University Malaysia Perlis</i> | August 2022 - April 2025
+					<br>
+            				<span style="color:#453827;"><b>CGPA: 3.5</b></span>
+        			</div>
+    			</li>
+
+    			<li>
+        			<img src="image/logoSmkcfb.png" class="school-logo" alt="SMK Logo">
+        			<div class="education-content">
+        	    			<b>Sijil Pelajaran Malaysia (SPM)</b>
+					<br>
+            				<i>SMK Convent Father Barre, Sungai Petani</i> | Jan 2017 - December 2021
+					<br>
+            				<span style="color:#453827;"><b> Grades: 4As</b></span>
+        			</div>
+    			</li>
+		</ul>
+
+        	<hr>
+        	
+        	<h2 class="section-title">Skills</h2>
+			<ul style="padding-left: 50px; margin-top: 10px;">
+				<li>Software: CodeBlocks, AutoCAD, KiCAD, Quartus II, EdSmin51, Cisco Packet Transfer, Scilab, UMLet</li>
+				<li>Teamwork</li>
+            			<li>Effective Communication</li>
+            			<li>Microsoft Word, Excel, and PowerPoint</li>
+            			<li>Canva</li>	
+        		</ul>
+        
+		<hr>
+
+        	<h2 class="section-title"> Projects</h2>
+			<ol style="padding-left: 50px; margin-top: 10px;">
+
+    				<li style="cursor:pointer; color:#2e4234; text-decoration:underline;" 
+        			onclick="openSlideshow(['image/project_1a.png', 'image/project_1b.png', 'image/project_1c.png', 'image/project_1d.png'])">
+        			Airline Management System (MySQL)
+    				</li>
+    				<br>
+
+    				<li style="cursor:pointer; color:#2e4234; text-decoration:underline;" 
+        			onclick="openSlideshow(['image/project_2a.png', 'image/project_2b.png', 'image/project_2c.jpg', 'image/project_2d.png'])">
+        			BLE Child Management System in Nursery (Arduino IDE)
+    				</li>
+    				<br>
+
+    				<li style="cursor:pointer; color:#2e4234; text-decoration:underline;" 
+        			onclick="openSlideshow(['image/project_3a.png', 'image/project_3b.png', 'image/project_3c.png', 'image/project_3d.png'])">
+        			Clinic Management System (Access 2016)
+    				</li>
+			</ol>
+
+
+        
+ 	</div>
+
+   	<div class="footer">
+        	<p>Created by Zahra Zulaikha for <b>IML470</b></p>
+       	 	<p>Last updated: May 12, 2026</p>
+        	<p>⚠️ DISCLAIMER: This website is created solely for educational purposes as part of IML470 coursework.</p>
+	</div>
+
+</div>
+
+<script>
+	let currentImages = []; // Stores the 3 images for the clicked project
+	let currentIndex = 0;   // Tracks which of the 3 images is showing
+
+	function openSlideshow(imageArray) {
+    	currentImages = imageArray;
+    	currentIndex = 0;
+    	updateModalImage();
+    	document.getElementById('imageModal').style.display = 'block';
+	}
+
+	function changeSlide(step) {
+    	currentIndex += step;
+    
+    	// If it goes past the 3rd image, go back to the 1st
+    	if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+   	}
+    	// If it goes back past the 1st image, go to the 3rd
+    	if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    	}
+    
+    	updateModalImage();
+	}
+
+	function updateModalImage() {
+    	const imgElement = document.getElementById('modalImg');
+    	imgElement.src = currentImages[currentIndex];
+	}
+
+	function closeModal() {
+    	document.getElementById('imageModal').style.display = 'none';
+	}
+
+	// Close the pop-up if the user clicks the dark background
+	window.onclick = function(event) {
+    	let modal = document.getElementById('imageModal');
+    	if (event.target == modal) {
+        closeModal();
+    		}
+	}
+
+</script>
+
+	<div id="imageModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); text-align:center;">
+
+    		<span style="position:absolute; top:20px; right:35px; color:white; font-size:40px; font-weight:bold; cursor:pointer;" onclick="closeModal()">&times;</span>
+    
+    		<a style="position:absolute; top:50%; left:20px; color:white; font-size:50px; cursor:pointer; user-select:none; transform:translateY(-50%);" 						onclick="event.stopPropagation(); changeSlide(-1)">&#10094;</a>
+    
+    		<img id="modalImg" style="margin-top:5%; max-width:80%; max-height:80%; border: 3px solid white; border-radius: 8px;">
+    
+    		<a style="position:absolute; top:50%; right:20px; color:white; font-size:50px; cursor:pointer; user-select:none; transform:translateY(-50%);" 						onclick="event.stopPropagation(); changeSlide(1)">&#10095;</a>
+	</div>
+
+</body>
+</html>

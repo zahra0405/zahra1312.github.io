@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="topic.html">Topic</a>
+    <a href="resume.html" >Resume</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>GALLERY <span>| My Comfort Space</span></h1>
+    </div>
+    
+    <div class="content">
+        <p><sup><i><b><font color=#1f1c15>This page contains some of my favorite things including photography, music, and calming videos that help me stay inspired and productive.
+	</font></b></i></sup></p>
+
+        <hr>
+        
+        <div class="gallery-section">
+
+            <div class="gallery-title">
+                <h2 class="section-title" style="display: inline-block;">🎨 My Photo Collection</h2>
+            </div>
+            
+            <div class="photo-grid">
+                <img src="image/pic1.jpeg" 
+			class="grid-img" 
+			onclick="openImage(this.src, 'I took a photo of an old building with many windows on Brewster Road, Ipoh. Looking at this old building gives me a deep sense of anemoia.🥲')">
+
+                <img src="image/pic2.jpeg" 
+     			class="grid-img" 
+    			onclick="openImage(this.src, 'This is my dad pretending to sleep on an IKEA bed. If we leave him, I think he would actually fall asleep.😹')">
+
+                <img src="image/pic3.jpeg" 
+     			class="grid-img" 
+    			onclick="openImage(this.src, 'Fireworks I captured during Raya night. It is pretty 💕')">
+
+                <img src="image/pic4.jpeg" 
+			class="grid-img" 
+			onclick="openImage(this.src, 'My first class picture together with my kind and funny classmates 😁')">
+        
+                <img src="image/pic5.jpeg" 
+			class="grid-img" 
+			onclick="openImage(this.src, 'I officially graduated with my Diploma! And guess which one is the flower 🎓')">
+
+                <img src="image/pic6.jpeg" 
+			class="grid-img" 
+			onclick="openImage(this.src, 'Saw this random cat and I thought it look a bit scary 🙈')">
+
+                <img src="image/gif7.gif" 
+			class="grid-img" 
+			onclick="openImage(this.src, 'With my supportive and beautiful family on graduation day ❤️‍🩹')">
+
+                <img src="image/pic8.jpeg" 
+			class="grid-img" 
+			onclick="openImage(this.src, 'My friend, cutie Ikmal and I went to Penang Hill Station. A cute memory 🩵')">
+            </div>
+            
+            <div class="gallery-caption">
+                 <p><small>✨ Click on any image to view larger ✨</small></p>
+            </div>
+
+        </div>
+        
+        <hr>
+        
+        <h2 class="section-title"> Music I Enjoy 🎧</h2>
+	<br>
+        <p><i>Music helps me stay focused, relaxed, and motivated while studying or spending time alone.</i></p>
+        
+        <div style="background: #a5c4ae; padding: 20px; border-radius: 15px; margin: 15px 0;">
+
+            <h4>⚡ Electro</h3>
+            <audio controls style="width: 100%; margin: 10px 0;">
+                <source src="audio/zambolino_Machine.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+            <p><small>Music track: Machine by Zambolino, Source: https://freetouse.com/music, Free No Copyright Music Download</small></p>
+
+	<br>
+
+            <h4>🎞️ Dramatic</h3>
+            <audio controls style="width: 100%; margin: 10px 0;">
+                <source src="audio/pufino_ThereBeDragons.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+            <p><small>Music track: There Be Dragons by Pufino, Source: https://freetouse.com/music, No Copyright Background Music</small></p>
+          
+  	<br>
+
+            <h4>🌧️ Ambient</h3>
+            <audio controls style="width: 100%; margin: 10px 0;">
+                <source src="audio/walen_Dark Heart.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+            <p><small>Music track: Dark Heart by Walen, Source: https://freetouse.com/music, Vlog Music for Videos (Free Download)</small></p>
+
+        </div>
+
+        <hr>
+
+        <h2 class="section-title">☕ My Favorite Relaxing Video</h2>
+        <p><i>Relaxing videos help create a comfortable study environment and improve focus.</i></p>
+        
+        <div style="background: #f0f5f5; padding: 20px; border-radius: 15px; margin: 15px 0; text-align: center;">
+        	<iframe width="560" height="315" src="https://www.youtube.com/embed/3LziNDk4kng?si=FZ5d9XrUTjFcf-mz" title="YouTube video player" frameborder="0" 
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 				allowfullscreen>
+		</iframe>
+		<p><small>Building a Warm and Cozy Dugout for Survival. Log Shelter, Secret cave, Winter Bushcraft.</small></p>
+        </div>
+           
+    </div>
+    
+    <div class="footer">
+        <p>Created by Zahra Zulaikha for <b>IML470</b></p>
+        <p>Last updated: May 12, 2026</p>
+        <p>⚠️ DISCLAIMER: This website is created solely for educational purposes as part of IML470 coursework.</p>
+    </div>
+
+</div>
+
+<script>
+    function openImage(imageSrc, description) {
+        const modal = document.createElement('div');
+        modal.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:9999; cursor:pointer; font-family: sans-serif;";
+        
+        const container = document.createElement('div');
+        container.style = "text-align:center; max-width:90%;";
+
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.style = "max-width:100%; max-height:80vh; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5);";
+        
+        const text = document.createElement('div');
+        text.innerText = description;
+        text.style = "color:white; margin-top:20px; font-size:1.2rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.5);";
+
+        container.appendChild(img);
+        container.appendChild(text);
+        modal.appendChild(container);
+        
+        document.body.appendChild(modal);
+        modal.onclick = () => document.body.removeChild(modal);
+    }
+</script>
+
+
+</body>
+</html>
